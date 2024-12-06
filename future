@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    double price, amount, point, visual_L, visual_W;
+    //cout << fixed << setprecision(3);
+
+    cin >> price;
+    cin >> amount;
+    cin >> point;
+
+    point += 2;
+
+
+    double pnl = amount / point;
+    double required = price * pnl;
+
+    visual_L = pnl * (point - 2);
+    visual_W = pnl * (point + 2);
+
+    cout << ceil(required) << " - ";
+    cout << (round(visual_L * 100) / 100) << " - " << (ceil(visual_W * 100) / 100) << endl;
+    cout << "Visual L point: " << (point - 2) << endl << "Visual W point: " << (point + 2);
+
+    return 0;
+}
